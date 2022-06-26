@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/gradient_background_colour">
+    android:background="@drawable/gradient_background_colour"
+    tools:context=".MainActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,12 +39,12 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_hello"
-            android:textColor="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
             android:fontFamily="@font/sfrpro"
             android:text="@string/hello"
+            android:textColor="@color/white"
             android:textSize="42sp"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toBottomOf="@id/iv_rect" />
@@ -52,12 +52,12 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_introduce"
-            android:textColor="@color/grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             android:fontFamily="@font/sfrpro"
             android:text="@string/lets_introduce"
+            android:textColor="@color/grey"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_hello" />
@@ -66,9 +66,9 @@
             android:id="@+id/iv_logo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@id/et_fullname"
             android:layout_marginTop="37dp"
             android:src="@drawable/ic_icon"
+            app:layout_constraintEnd_toStartOf="@id/et_fullname"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toBottomOf="@id/tv_introduce" />
 
@@ -84,6 +84,7 @@
             app:layout_constraintEnd_toStartOf="@+id/right_guideline"
             app:layout_constraintStart_toEndOf="@id/iv_logo1"
             app:layout_constraintTop_toTopOf="@id/iv_logo1" />
+
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_logo2"
@@ -110,35 +111,53 @@
             tools:ignore="NotSibling" />
 
 
+        <RelativeLayout
+            android:id="@+id/relative"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/right_guideline"
+            app:layout_constraintStart_toEndOf="@id/btn_backButton"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo2">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:elevation="10dp"
+                android:paddingStart="90dp"
+                android:paddingEnd="0dp"
+                android:src="@drawable/ic_arrow_next" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Next"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginStart="12dp"
+                android:background="@drawable/gradient_next_btn"
+                android:text="@string/next"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+
         <androidx.appcompat.widget.AppCompatButton
 
             android:id="@+id/btn_backButton"
             android:layout_width="0dp"
-            app:layout_constraintDimensionRatio="1"
             android:layout_height="58dp"
             android:layout_marginTop="70dp"
             android:background="@drawable/back_btn_round"
             android:drawableTop="@drawable/ic_arrow_back"
-            app:layout_constraintEnd_toStartOf="@id/btn_Next"
             android:paddingTop="22dp"
+            app:layout_constraintDimensionRatio="1"
             app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toBottomOf="@id/iv_logo2" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_Next"
-            android:layout_width="0dp"
-            android:textAlignment="viewEnd"
-            android:paddingEnd="135dp"
-            android:layout_height="58dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/gradient_next_btn"
-            android:drawableEnd="@drawable/ic_arrow_next"
-            android:text="@string/next"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
-            app:layout_constraintStart_toEndOf="@id/btn_backButton"
-            app:layout_constraintTop_toBottomOf="@id/iv_logo2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
