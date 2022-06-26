@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_background_colour">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_rect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/ic_rectangle_copy_4"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_hello"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/sfrpro"
+            android:text="@string/hello"
+            android:textSize="42sp"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/iv_rect" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_introduce"
+            android:textColor="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/sfrpro"
+            android:text="@string/lets_introduce"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_hello" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/et_fullname"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tv_introduce" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_fullname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:hint="@string/your_full_name"
+            android:textColorHint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_logo1"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@id/iv_logo1"
+            app:layout_constraintTop_toTopOf="@id/iv_logo1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:src="@drawable/ic_icon"
+            app:layout_constraintEnd_toStartOf="@+id/et_username"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo1" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:hint="@string/username"
+            android:textColorHint="@color/grey"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_logo2"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@id/iv_logo2"
+            app:layout_constraintTop_toTopOf="@id/iv_logo2"
+            tools:ignore="NotSibling" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:id="@+id/btn_backButton"
+            android:layout_width="0dp"
+            app:layout_constraintDimensionRatio="1"
+            android:layout_height="58dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/back_btn_round"
+            android:drawableTop="@drawable/ic_arrow_back"
+            app:layout_constraintEnd_toStartOf="@id/btn_Next"
+            android:paddingTop="22dp"
+            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Next"
+            android:layout_width="0dp"
+            android:textAlignment="viewEnd"
+            android:paddingEnd="135dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/gradient_next_btn"
+            android:drawableEnd="@drawable/ic_arrow_next"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/right_guideline"
+            app:layout_constraintStart_toEndOf="@id/btn_backButton"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
